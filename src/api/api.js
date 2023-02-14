@@ -1,20 +1,19 @@
 import axios from "axios";
 
+const TOKEN = 'add your token'
+
 const instance = axios.create({
   baseURL: 'https://api.github.com/graphql',
   timeout: 3000,
   headers: {
-    'Authorization': `bearer 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`,
+    'Authorization': `bearer ${TOKEN}`,
     'Content-Type': 'application/x-www-form-urlencoded'
   }
 });
 
 
-const TOKEN = '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'
 
 export const Api = {
-
-
   getRepositories: async () => {
     try {
       const res = await instance.post(``, JSON.stringify({
@@ -27,8 +26,8 @@ export const Api = {
       }
     }
   }
-}`
-      }, null, 2))
+}` }, null, 2))
+
       const data = res.data
       return data.data.user.repositories.nodes
     } catch (e) {
@@ -74,23 +73,3 @@ export const Api = {
 
   }
 }
-
-// const query  {
-//   repository(owner:"octocat", name:"Hello-World") {
-//     issues(last:20, states:CLOSED) {
-//       edges {
-//         node {
-//           title
-//           url
-//           labels(first:5) {
-//             edges {
-//               node {
-//                 name
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
