@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Main from "@/components/Pages/Main";
-import IssuePage from "@/components/Pages/IssuePage";
-import IssueComments from "@/components/Pages/IssueComments";
+import Main from "@/Pages/Main";
+import IssuePage from "@/Pages/IssuePage";
+import IssueComments from "@/Pages/IssueComments";
 
 const routes = [
   {
